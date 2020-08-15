@@ -1,3 +1,21 @@
+## Problem
+
+How to add tabs to a page, and retain their content state when a user switches to another tab and back again?
+
+## Cause
+
+Tabs are just a component with tab "ears". It does not have a page associated with it
+The tabs are rendered and then depending the selection, it will conditionally render a separate component
+
+When switching to another tab, the previous content component will be destroyed from the DOM, therefore switching back to it,
+will cause a new version of that component to render. meaning anything that the user selected in that compoment will be lost.
+
+## Solution
+
+Lift up the state to the parent compoment. pass the data and selections to the tab as props
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
